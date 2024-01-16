@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [rates, setRates] = useState();
+  const [ratesFetched, setRatesFetched] = useState(false);
+
+  const getRates = async () => {
+    const response = await fetch(
+      "https://v6.exchangerate-api.com/v6/980210ba6fb6b4867d436c88/latest/USD"
+    ).then((response) => response.json);
+
+    if (response.resulte === "success") {
+      setRates(response.conversion_rates);
+      setRatesFetched(true);
+    }
+  };
+
+  useEffect(() => {
+    getRates();
+  }, []);
+
+  return <div className="container"></div>;
 }
 
 export default App;
