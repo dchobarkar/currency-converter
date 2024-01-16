@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import "./App.css";
+
 function App() {
   const [rates, setRates] = useState();
   const [ratesFetched, setRatesFetched] = useState(false);
