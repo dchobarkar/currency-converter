@@ -19,7 +19,46 @@ function App() {
     getRates();
   }, []);
 
-  return <div className="container"></div>;
+  return (
+    <div className="container">
+      <div className="input-amount">
+        <label>Amount:</label>
+        <input type="number" id="amount" />
+      </div>
+      <div className="input-from">
+        <label>From:</label>
+        <select id="from">
+          {ratesFetched ? (
+            Object.keys(rates).map((currency, index) => (
+              <option key={index} value={currency}>
+                {currency}
+              </option>
+            ))
+          ) : (
+            <option defaultValue>USD</option>
+          )}
+        </select>
+      </div>
+      <div className="input-to">
+        <label>To:</label>
+        <select id="to">
+          {ratesFetched ? (
+            Object.keys(rates).map((currency, index) => (
+              <option key={index} value={currency}>
+                {currency}
+              </option>
+            ))
+          ) : (
+            <option defaultValue>EUR</option>
+          )}
+        </select>
+      </div>
+      <button className="btn">Calculate</button>
+      <div className="output">
+        <label>Output:</label>
+      </div>
+    </div>
+  );
 }
 
 export default App;
