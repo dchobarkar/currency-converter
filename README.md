@@ -7,14 +7,16 @@ This project is a React-based currency converter. It allows users to convert amo
 ## Installation
 
 To install this project, follow these steps:
-$ git clone https://github.com/dchobarkar/currency-converter.git
-$ cd currency-converter
-$ npm install
+
+    $ git clone https://github.com/dchobarkar/currency-converter.git
+    $ cd currency-converter
+    $ npm install
 
 ## Usage
 
 To run the application, use the following command:
-$ npm start
+
+    $ npm start
 
 Navigate to `http://localhost:3000` in your browser to use the application.
 
