@@ -22,7 +22,7 @@ function App() {
     ).then((response) => response.json());
 
     // Save the rates in the state
-    if (response.resulte === "success") {
+    if (response.result === "success") {
       setRates(response.conversion_rates);
       setRatesFetched(true);
     }
