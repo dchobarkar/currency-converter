@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CurrencyInput from "react-currency-input-field";
 
 import "./App.css";
 
@@ -43,11 +44,12 @@ function App() {
     <div className="container">
       <div className="input-amount">
         <label>Amount:</label>
-        <input
-          type="number"
-          id="amount"
+        <CurrencyInput
           value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          onValueChange={(amount) => setAmount(amount)}
+          intlConfig={{ locale: "en-US", currency: fromCurrency }}
+          allowDecimals={true}
+          allowNegativeValue={false}
         />
       </div>
       <div className="input-from">
